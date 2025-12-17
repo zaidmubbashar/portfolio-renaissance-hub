@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FolderGit2, Calendar, ExternalLink, Sparkles } from "lucide-react";
+import { FolderGit2, Calendar } from "lucide-react";
 
 const projects = [
   {
@@ -14,6 +14,7 @@ const projects = [
     ],
     features: ["FT", "IBFT", "Topups", "Utility Bills", "Bus Ticketing"],
     figmaPrompt: "Create a fintech app portfolio screen showing a clean wallet dashboard with cyan accents, payment cards, transaction history with smooth gradients, and a modern dark theme. Include mockups of bill payment flow and mobile top-up screens.",
+    images: ["/projects/fintech-1.png", "/projects/fintech-2.png", "/projects/fintech-3.png"],
     featured: true,
   },
   {
@@ -28,6 +29,7 @@ const projects = [
     ],
     features: ["Mobile Bundles", "Data Packages", "Bus Booking"],
     figmaPrompt: "Design a telecom consumer app portfolio screen with mobile bundle selection cards, data package comparison view, and bus booking interface. Use purple accents on dark background with glass morphism effects.",
+    images: ["/projects/telecom-1.png", "/projects/telecom-2.png", "/projects/telecom-3.png"],
     featured: true,
   },
   {
@@ -43,6 +45,7 @@ const projects = [
     ],
     features: ["Real-time Charts", "Deep Linking", "Meme Coin Trading"],
     figmaPrompt: "Create a crypto trading app portfolio screen featuring live candlestick charts, buy/sell interface with green/red accents, portfolio balance card, and meme coin listing. Dark theme with neon glow effects.",
+    images: ["/projects/crypto-1.png", "/projects/crypto-2.png", "/projects/crypto-3.png"],
     featured: true,
   },
   {
@@ -57,6 +60,7 @@ const projects = [
     ],
     features: ["ARKit", "Event Ticketing", "Crypto Payments"],
     figmaPrompt: "Design an event ticketing app with AR preview feature, event cards with venue maps, and NFT ticket gallery. Include payment flow screens with multiple crypto options. Use vibrant gradients on dark theme.",
+    images: ["/projects/nft-1.png", "/projects/nft-2.png", "/projects/nft-3.png"],
     featured: false,
   },
   {
@@ -71,6 +75,7 @@ const projects = [
     ],
     features: ["MapKit", "Social Login", "Spot Sharing"],
     figmaPrompt: "Create a location-sharing app portfolio screen with interactive map view, spot cards with photos, and social features. Include login screen with social auth buttons. Use map-inspired color palette with location pins.",
+    images: ["/projects/loc-share-1.png", "/projects/loc-share-2.png", "/projects/loc-share-3.png"],
     featured: false,
   },
 ];
@@ -131,7 +136,23 @@ const ProjectsSection = () => {
                 </div>
               </div>
 
-              {/* Tech Badge */}
+              {project.images && project.images.length > 0 && (
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                  {project.images.slice(0, 3).map((src) => (
+                    <div
+                      key={src}
+                      className="rounded-xl overflow-hidden border border-border/40 bg-muted/20 flex items-center justify-center"
+                    >
+                      <img
+                        src={src}
+                        alt={project.title}
+                        className="w-full h-56 object-contain"
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
+
               <div className="inline-flex px-3 py-1 text-sm bg-primary/20 text-primary rounded-full mb-4">
                 {project.tech}
               </div>
@@ -155,16 +176,6 @@ const ProjectsSection = () => {
                 ))}
               </div>
 
-              {/* Figma AI Prompt */}
-              <div className="border-t border-border/50 pt-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <Sparkles className="w-4 h-4 text-accent" />
-                  <span className="text-sm font-medium text-accent">Figma AI Portfolio Prompt</span>
-                </div>
-                <p className="text-xs text-muted-foreground leading-relaxed italic">
-                  "{project.figmaPrompt}"
-                </p>
-              </div>
             </motion.div>
           ))}
         </div>
@@ -199,19 +210,30 @@ const ProjectsSection = () => {
                   <span className="text-xs text-muted-foreground">{project.period}</span>
                 </div>
                 <p className="text-sm text-muted-foreground mb-3">{project.description}</p>
+
+                {project.images && project.images.length > 0 && (
+                  <div className="grid grid-cols-3 gap-3 mb-4">
+                    {project.images.slice(0, 3).map((src) => (
+                      <div
+                        key={src}
+                        className="rounded-lg overflow-hidden border border-border/30 bg-muted/20 flex items-center justify-center"
+                      >
+                        <img
+                          src={src}
+                          alt={project.title}
+                          className="w-full h-32 object-contain"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+
                 <div className="flex flex-wrap gap-1">
                   {project.features.map((feature) => (
                     <span key={feature} className="px-2 py-0.5 text-xs bg-muted/30 text-muted-foreground rounded">
                       {feature}
                     </span>
                   ))}
-                </div>
-                
-                {/* Figma Prompt */}
-                <div className="mt-4 pt-3 border-t border-border/30">
-                  <p className="text-xs text-muted-foreground/70 italic line-clamp-2">
-                    <span className="text-accent">Figma:</span> "{project.figmaPrompt}"
-                  </p>
                 </div>
               </motion.div>
             ))}

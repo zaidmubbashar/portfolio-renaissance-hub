@@ -86,15 +86,16 @@ const HeroSection = () => {
             transition={{ delay: 0.6, duration: 0.6 }}
             className="flex justify-center gap-4"
           >
-            <a 
-              href="#" 
+            <a
+              href="#"
               className="flex items-center gap-2 px-6 py-3 bg-gradient-primary text-primary-foreground font-medium rounded-lg hover:shadow-hover hover:scale-105 transition-all duration-300"
             >
               <Linkedin className="w-5 h-5" />
               LinkedIn
             </a>
-            <a 
-              href="#" 
+            <a
+              href="/Khawaja-Rehan-Jawed-Resume.pdf"
+              download="Khawaja-Rehan-Jawed-Resume.pdf"
               className="flex items-center gap-2 px-6 py-3 glass rounded-lg hover:shadow-hover hover:scale-105 transition-all duration-300 font-medium"
             >
               <Download className="w-5 h-5 text-primary" />
