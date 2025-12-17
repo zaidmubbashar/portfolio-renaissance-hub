@@ -87,7 +87,9 @@ const HeroSection = () => {
             className="flex justify-center gap-4"
           >
             <a
-              href="#"
+              href="https://www.linkedin.com/in/khawaja-rehan-4ab702178/"
+              target="_blank"
+              rel="noreferrer"
               className="flex items-center gap-2 px-6 py-3 bg-gradient-primary text-primary-foreground font-medium rounded-lg hover:shadow-hover hover:scale-105 transition-all duration-300"
             >
               <Linkedin className="w-5 h-5" />
