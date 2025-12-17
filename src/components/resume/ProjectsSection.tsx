@@ -138,7 +138,7 @@ const ProjectsSection = () => {
 
               {project.images && project.images.length > 0 && (
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-                  {project.images.slice(0, 3).map((src) => (
+                  {project.images.slice(0, 3).map((src, imgIndex) => (
                     <div
                       key={src}
                       className="rounded-xl overflow-hidden border border-border/40 bg-muted/20"
@@ -146,7 +146,7 @@ const ProjectsSection = () => {
                       <img
                         src={src}
                         alt={project.title}
-                        className="w-full h-56 object-cover object-center"
+                        className={`w-full h-56 ${imgIndex === 0 ? "object-contain" : "object-cover object-center"}`}
                       />
                     </div>
                   ))}
@@ -213,7 +213,7 @@ const ProjectsSection = () => {
 
                 {project.images && project.images.length > 0 && (
                   <div className="grid grid-cols-3 gap-3 mb-4">
-                    {project.images.slice(0, 3).map((src) => (
+                    {project.images.slice(0, 3).map((src, imgIndex) => (
                       <div
                         key={src}
                         className="rounded-lg overflow-hidden border border-border/30 bg-muted/20"
@@ -221,7 +221,7 @@ const ProjectsSection = () => {
                         <img
                           src={src}
                           alt={project.title}
-                          className="w-full h-32 object-cover object-center"
+                          className={`w-full h-32 ${imgIndex === 0 ? "object-contain" : "object-cover object-center"}`}
                         />
                       </div>
                     ))}
