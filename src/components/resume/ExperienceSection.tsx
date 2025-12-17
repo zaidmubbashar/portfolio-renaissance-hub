@@ -10,7 +10,6 @@ const experiences = [
     current: true,
     highlights: [
       "Developed major consumer and merchant features including Topups, Utility Bills, Bus Ticketing, and Wallet flows",
-      "Improved app stability by reducing crash rate by 35% and load times by 40% through code refactoring",
       "Migrated core modules to Combine + MVVM-R, improving responsiveness and reducing UI bugs",
       "Performed complete UI/UX rebranding, converting Figma designs into reusable UIKit components",
       "Integrated high-volume REST APIs for secure transactions and smoother payment flows",
