@@ -141,12 +141,12 @@ const ProjectsSection = () => {
                   {project.images.slice(0, 3).map((src) => (
                     <div
                       key={src}
-                      className="rounded-xl overflow-hidden border border-border/40 bg-muted/20 flex items-center justify-center"
+                      className="rounded-xl overflow-hidden border border-border/40 bg-muted/20"
                     >
                       <img
                         src={src}
                         alt={project.title}
-                        className="w-full h-56 object-contain"
+                        className="w-full h-56 object-cover object-center"
                       />
                     </div>
                   ))}
@@ -216,12 +216,12 @@ const ProjectsSection = () => {
                     {project.images.slice(0, 3).map((src) => (
                       <div
                         key={src}
-                        className="rounded-lg overflow-hidden border border-border/30 bg-muted/20 flex items-center justify-center"
+                        className="rounded-lg overflow-hidden border border-border/30 bg-muted/20"
                       >
                         <img
                           src={src}
                           alt={project.title}
-                          className="w-full h-32 object-contain"
+                          className="w-full h-32 object-cover object-center"
                         />
                       </div>
                     ))}
